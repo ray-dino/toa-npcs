@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<head>
+
+</head>
+<body>
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.slim.min.js"></script>
+    <fieldset>
+        <legend>Artus Cimber</legend>
+        <p>AC: 14</p>
+        <p>HP: <input type="number" width=2 value=82 /> /82</p>
+        <p>Speed: 30</p>
+        <fieldset>
+            <legend>Ability Checks</legend>
+            <p>
+                <span>STR: 10/+0</span>
+                <button id="artus-str" class="rolld20" modifier="0">Roll</button>
+                <span id="result-artus-str"></span>
+            </p>
+        </fieldset>
+        <button id='initiative' class="rolld20" modifier="2">Roll Initiative</button>
+        <span id="result-initiative"></span>
+    </fieldset>
+
+
+
+    <script>
+            function rollD(die_max, modifier = 0) {
+                return Math.floor(Math.random() * die_max) + 1 + modifier;
+            }
+
+            $("button.rolld20").click(function(event) {
+                var id = event.target.id;
+                var modifier = parseInt(event.target.getAttribute("modifier"));
+                $("#result-"+id).html(rollD(20, modifier));
+            });
+        </script>
+</body>
+</html>
