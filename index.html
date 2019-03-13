@@ -13,12 +13,49 @@
             <legend>Ability Checks</legend>
             <p>
                 <span>STR: 10/+0</span>
-                <button id="artus-str" class="rolld20" modifier="0">Roll</button>
+                <button id="artus-str" class="rolldie" die="20" modifier="0">Roll</button>
                 <span id="result-artus-str"></span>
             </p>
+            <p>
+                <span>DEX: 15/+2</span>
+                <button id="artus-dex" class="rolldie" die="20" modifier="2">Roll</button>
+                <span id="result-artus-dex"></span>
+            </p>
+            <p>
+                <span>STR: 13/+1</span>
+                <button id="artus-con" class="rolldie" die="20" modifier="1">Roll</button>
+                <span id="result-artus-con"></span>
+            </p>
+            <p>
+                <span>INT: 17/+3</span>
+                <button id="artus-int" class="rolldie" die="20" modifier="3">Roll</button>
+                <span id="result-artus-int"></span>
+            </p>
+            <p>
+                <span>WIS: 16/+3</span>
+                <button id="artus-wis" class="rolldie" die="20" modifier="3">Roll</button>
+                <span id="result-artus-wis"></span>
+            </p>
+            <p>
+                <span>CHA: 18/+4</span>
+                <button id="artus-cha" class="rolldie" die="20" modifier="4">Roll</button>
+                <span id="result-artus-cha"></span>
+            </p>
         </fieldset>
-        <button id='initiative' class="rolld20" modifier="2">Roll Initiative</button>
-        <span id="result-initiative"></span>
+        <fieldset>
+            <legend>Combat</legend>
+            <p>
+                <button id='artus-init' class="rolldie" die="20" modifier="2">Roll Initiative</button>
+                <span id="result-artus-init"></span>
+            </p>
+            <p>
+                    <button id='artus-bookmark-hit' class="rolldie" die="20" modifier="8">Hit</button>
+                    <span id="result-artus-bookmark-hit"></span>
+                    <button id='artus-bookmark-dmg' class="rolldie" die="4" modifier="5">Damage</button>
+                    <span id="result-artus-bookmark-dmg"></span>
+            </p>
+        </fieldset>
+
     </fieldset>
 
 
@@ -28,10 +65,11 @@
                 return Math.floor(Math.random() * die_max) + 1 + modifier;
             }
 
-            $("button.rolld20").click(function(event) {
+            $("button.rolldie").click(function(event) {
                 var id = event.target.id;
+                var die = parseInt(event.target.getAttribute("die"));
                 var modifier = parseInt(event.target.getAttribute("modifier"));
-                $("#result-"+id).html(rollD(20, modifier));
+                $("#result-"+id).html(rollD(die, modifier));
             });
         </script>
 </body>
