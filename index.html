@@ -4,59 +4,193 @@
 </head>
 <body>
     <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.slim.min.js"></script>
-    <fieldset>
-        <legend>Artus Cimber</legend>
-        <p>AC: 14</p>
-        <p>HP: <input type="number" width=2 value=82 /> /82</p>
-        <p>Speed: 30</p>
+    <div style="width:500px; float:left;">
         <fieldset>
-            <legend>Ability Checks</legend>
-            <p>
-                <span>STR: 10/+0</span>
-                <button id="artus-str" class="rolldie" die="20" modifier="0">Roll</button>
-                <span id="result-artus-str"></span>
-            </p>
-            <p>
-                <span>DEX: 15/+2</span>
-                <button id="artus-dex" class="rolldie" die="20" modifier="2">Roll</button>
-                <span id="result-artus-dex"></span>
-            </p>
-            <p>
-                <span>STR: 13/+1</span>
-                <button id="artus-con" class="rolldie" die="20" modifier="1">Roll</button>
-                <span id="result-artus-con"></span>
-            </p>
-            <p>
-                <span>INT: 17/+3</span>
-                <button id="artus-int" class="rolldie" die="20" modifier="3">Roll</button>
-                <span id="result-artus-int"></span>
-            </p>
-            <p>
-                <span>WIS: 16/+3</span>
-                <button id="artus-wis" class="rolldie" die="20" modifier="3">Roll</button>
-                <span id="result-artus-wis"></span>
-            </p>
-            <p>
-                <span>CHA: 18/+4</span>
-                <button id="artus-cha" class="rolldie" die="20" modifier="4">Roll</button>
-                <span id="result-artus-cha"></span>
-            </p>
-        </fieldset>
-        <fieldset>
-            <legend>Combat</legend>
-            <p>
-                <button id='artus-init' class="rolldie" die="20" modifier="2">Roll Initiative</button>
-                <span id="result-artus-init"></span>
-            </p>
-            <p>
-                    <button id='artus-bookmark-hit' class="rolldie" die="20" modifier="8">Hit</button>
-                    <span id="result-artus-bookmark-hit"></span>
-                    <button id='artus-bookmark-dmg' class="rolldie" die="4" modifier="5">Damage</button>
-                    <span id="result-artus-bookmark-dmg"></span>
-            </p>
-        </fieldset>
+            <legend>Artus Cimber</legend>
+            <p>AC: 14</p>
+            <p>HP: <input type="number" width=2 value=82 />82</p>
+            <p>Speed: 30</p>
+            <fieldset style="float: left;">
+                <legend>Ability Checks</legend>
+                <p>
+                    <span>STR: 10/+0</span>
+                    <button id="artus-str" class="rolldie" die="20" modifier="0">Roll</button>
+                    <span id="result-artus-str"></span>
+                </p>
+                <p>
+                    <span>DEX: 15/+2</span>
+                    <button id="artus-dex" class="rolldie" die="20" modifier="2">Roll</button>
+                    <span id="result-artus-dex"></span>
+                </p>
+                <p>
+                    <span>CON: 13/+1</span>
+                    <button id="artus-con" class="rolldie" die="20" modifier="1">Roll</button>
+                    <span id="result-artus-con"></span>
+                </p>
+                <p>
+                    <span>INT: 17/+3</span>
+                    <button id="artus-int" class="rolldie" die="20" modifier="3">Roll</button>
+                    <span id="result-artus-int"></span>
+                </p>
+                <p>
+                    <span>WIS: 16/+3</span>
+                    <button id="artus-wis" class="rolldie" die="20" modifier="3">Roll</button>
+                    <span id="result-artus-wis"></span>
+                </p>
+                <p>
+                    <span>CHA: 18/+4</span>
+                    <button id="artus-cha" class="rolldie" die="20" modifier="4">Roll</button>
+                    <span id="result-artus-cha"></span>
+                </p>
+            </fieldset>
+            <fieldset style="float: left;">
+                <legend>Saving Throws</legend>
+                <p>
+                    <span>DEX: +5</span>
+                    <button id="artus-dex-save" class="rolldie" die="20" modifier="5">Roll</button>
+                    <span id="result-artus-dex-save"></span>
+                </p>
+                <p>
+                    <span>CHA: +7</span>
+                    <button id="artus-ch-save" class="rolldie" die="20" modifier="7">Roll</button>
+                    <span id="result-artus-cha-save"></span>
+                </p>
+            </fieldset>
+            <fieldset>
+                <legend>Skills</legend>
+                <p>
+                    <span>Deception: +7</span>
+                    <button id="artus-deception" class="rolldie" die="20" modifier="7">Roll</button>
+                    <span id="result-artus-deception"></span>
+                </p>
+                <p>
+                    <span>History: +9</span>
+                    <button id="artus-history" class="rolldie" die="20" modifier="9">Roll</button>
+                    <span id="result-artus-history"></span>
+                </p>
+                <p>
+                    <span>Insight: +6</span>
+                    <button id="artus-insight" class="rolldie" die="20" modifier="6">Roll</button>
+                    <span id="result-artus-insight"></span>
+                </p>
+                <p>
+                    <span>Survival: +9</span>
+                    <button id="artus-survival" class="rolldie" die="20" modifier="9">Roll</button>
+                    <span id="result-artus-survival"></span>
+                </p>
+            </fieldset>
+            <fieldset>
+                <legend>Combat</legend>
+                <p>
+                    <button id='artus-init' class="rolldie" die="20" modifier="2">Roll Initiative</button>
+                    <span id="result-artus-init"></span>
+                </p>
+                <fieldset>
+                    <legend>Bookmark</legend>
+                    <p>
+                        <button id='artus-bookmark-hit' class="rolldie" die="20" modifier="8">Hit</button>
+                        <span id="result-artus-bookmark-hit"></span>
+                        <button id='artus-bookmark-dmg' class="rolldie" die="4" modifier="5">Damage</button>
+                        <span id="result-artus-bookmark-dmg"></span>
+                    </p>
+                </fieldset>
+                <fieldset>
+                    <legend>Longbow</legend>
+                    <p>
+                        <button id='artus-longbow-hit' class="rolldie" die="20" modifier="5">Hit</button>
+                        <span id="result-artus-longbow-hit"></span>
+                        <button id='artus-longbow-dmg' class="rolldie" die="8" modifier="2">Damage</button>
+                        <span id="result-artus-longbow-dmg"></span>
+                    </p>
+                </fieldset>
+            </fieldset>
 
-    </fieldset>
+        </fieldset>
+    </div>
+    <div style="width:500px; float:left;">
+        <fieldset>
+            <legend>Dragonbait</legend>
+            <p>AC: 17</p>
+            <p>HP: <input type="number" width=2 value=120 />120</p>
+            <p>Speed: 30</p>
+            <fieldset style="float: left;">
+                <legend>Ability Checks</legend>
+                <p>
+                    <span>STR: 15/+2</span>
+                    <button id="dragonbait-str" class="rolldie" die="20" modifier="2">Roll</button>
+                    <span id="result-dragonbait-str"></span>
+                </p>
+                <p>
+                    <span>DEX: 13/+1</span>
+                    <button id="dragonbait-dex" class="rolldie" die="20" modifier="1">Roll</button>
+                    <span id="result-dragonbait-dex"></span>
+                </p>
+                <p>
+                    <span>CON: 17/+3</span>
+                    <button id="dragonbait-con" class="rolldie" die="20" modifier="3">Roll</button>
+                    <span id="result-dragonbait-con"></span>
+                </p>
+                <p>
+                    <span>INT: 14/+2</span>
+                    <button id="dragonbait-int" class="rolldie" die="20" modifier="2">Roll</button>
+                    <span id="result-dragonbait-int"></span>
+                </p>
+                <p>
+                    <span>WIS: 16/+3</span>
+                    <button id="dragonbait-wis" class="rolldie" die="20" modifier="3">Roll</button>
+                    <span id="result-dragonbait-wis"></span>
+                </p>
+                <p>
+                    <span>CHA: 18/+4</span>
+                    <button id="dragonbait-cha" class="rolldie" die="20" modifier="4">Roll</button>
+                    <span id="result-dragonbait-cha"></span>
+                </p>
+            </fieldset>
+            <fieldset style="float: left;">
+                <legend>Saving Throws</legend>
+                <p>
+                    <span>WIS: +6</span>
+                    <button id="dragonbait-dex-save" class="rolldie" die="20" modifier="6">Roll</button>
+                    <span id="result-dragonbait-dex-save"></span>
+                </p>
+                <p>
+                    <span>CHA: +7</span>
+                    <button id="dragonbait-ch-save" class="rolldie" die="20" modifier="7">Roll</button>
+                    <span id="result-dragonbait-cha-save"></span>
+                </p>
+            </fieldset>
+            <fieldset>
+                <legend>Skills</legend>
+                <p>
+                    <span>Athletics: +5</span>
+                    <button id="dragonbait-athletics" class="rolldie" die="20" modifier="5">Roll</button>
+                    <span id="result-dragonbait-athletics"></span>
+                </p>
+                <p>
+                    <span>Medicine: +6</span>
+                    <button id="dragonbait-medicine" class="rolldie" die="20" modifier="6">Roll</button>
+                    <span id="result-dragonbait-medicine"></span>
+                </p>
+            </fieldset>
+            <fieldset>
+                <legend>Combat</legend>
+                <p>
+                    <button id='dragonbait-init' class="rolldie" die="20" modifier="1">Roll Initiative</button>
+                    <span id="result-dragonbait-init"></span>
+                </p>
+                <fieldset>
+                    <legend>Longsword</legend>
+                    <p>
+                        <button id='dragonbait-longsword-hit' class="rolldie" die="20" modifier="5">Hit</button>
+                        <span id="result-dragonbait-longsword-hit"></span>
+                        <button id='dragonbait-longsword-dmg' class="rolldie" die="10" modifier="2">Damage</button>
+                        <span id="result-dragonbait-longsword-dmg"></span>
+                    </p>
+                </fieldset>
+            </fieldset>
+
+        </fieldset>
+    </div>
 
 
 
